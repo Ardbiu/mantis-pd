@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Mechanism-aware Parkinson’s disease progression modeling website." />
     <title>Mantis PD</title>
+    <script>
+      ;(function (location) {
+        if (location.search[1] === '/') {
+          const decoded = location.search
+            .slice(1)
+            .split('&')
+            .map((segment) => segment.replace(/~and~/g, '&'))
+            .join('?')
+          window.history.replaceState(null, '', decoded + location.hash)
+        }
+      })(window.location)
+    </script>
     <script type="module" crossorigin src="/mantis-pd/assets/index-BH6j2LY8.js"></script>
     <link rel="stylesheet" crossorigin href="/mantis-pd/assets/index-D9EA6iRR.css">
   </head>
